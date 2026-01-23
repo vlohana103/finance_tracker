@@ -11,11 +11,14 @@ def add_expense():
 # views expenses
 def view_expense():
     print("Your expense log is:\n", expense_list)
+    print("-" * 40)
 
     # calculate total expense
-    total = 0.0
+    total = sum(expense_list.values())
+
+    """total = 0.0
     for value in expense_list.values():
-        total += value
+        total += value"""
     print("Your total cost of expenses are: $" + str(total))
         
 
@@ -34,7 +37,7 @@ while True:
 
     # User chooses to use application
     elif welcome.lower() == 'y' or welcome.lower() == "yes":
-        ask = int(input("Type 1. to add to expense, 2. to view Expense, 3. Exit\n"))
+        ask = int(input("Press 1. to add to expense, \nPress 2. to view Expense, \nPress 3. Exit\n"))
         if ask == 1: # add to expense
             add_expense()
 
