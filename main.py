@@ -8,6 +8,15 @@ def add_expense():
 
     expense_list.update({item : num})
 
+    update = input("Would you like to add another item? (Y/N)")
+    while update.lower() == 'y':
+        add_expense()
+        if update.lower() == 'n':
+            print("Done updating expenses!")
+            break
+        else:
+            print("Please enter a valid input!")
+        break
 # views expenses
 def view_expense():
     print("Your expense log is:\n", expense_list)
@@ -28,7 +37,7 @@ print("Welcome to the Finance Tracker.\n")
 
 while True:
 
-    welcome = input("Press Y to add or view expenses. Press N to exit.\n")
+    welcome = input("Press Y to add / view expenses. Press N to exit.\n")
 
     # User chooses to quit application
     if welcome.lower() == 'n' or welcome.lower() == "no":
