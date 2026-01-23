@@ -8,7 +8,7 @@ def add_expense():
 
     expense_list.update({item : num})
 
-    update = input("Would you like to add another item? (Y/N)")
+    """update = input("Would you like to add another item? (Y/N)")
     while update.lower() == 'y':
         add_expense()
         if update.lower() == 'n':
@@ -16,7 +16,7 @@ def add_expense():
             break
         else:
             print("Please enter a valid input!")
-        break
+        break"""
 # views expenses
 def view_expense():
     print("Your expense log is:\n", expense_list)
