@@ -1,5 +1,18 @@
-# making expense dictionary -> expense description : amount
-expense_list = {}
+import json
+
+# Loads expense list
+def load_from_file():
+    try:
+        with open("expenses.json", "r") as f:
+                return json.load(f) # goes from JSON to python
+    except FileNotFoundError:
+        return {}
+
+# saves expense list        
+def save_to_file():
+    with open("expenses.json", "w") as f:
+        json.dump(expense_list, f) # goes from python to JSON
+
 
 # adds expense to dict. expense description : amount
 def add_expense():
@@ -17,6 +30,7 @@ def add_expense():
         else:
             print("Please enter a valid input!")
         break"""
+    save_to_file()
 # views expenses
 def view_expense():
     print("Your expense log is:\n", expense_list)
@@ -29,8 +43,11 @@ def view_expense():
     for value in expense_list.values():
         total += value"""
     print("Your total cost of expenses are: $" + str(total))
-        
 
+
+# =========== Start of core logic ============
+# making expense dictionary -> expense description : amount
+expense_list = load_from_file()
 
 print("Welcome to the Finance Tracker.\n")
 
