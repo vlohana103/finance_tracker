@@ -18,7 +18,11 @@ def save_to_file():
 # adds expense to dict. expense description : amount
 def add_expense():
     item = input("What item are you adding to your expense?\n")
-    num = float(input("How much money would you like to add?\n"))
+    try:
+        num = float(input("How much money would you like to add?\n"))
+    except ValueError:
+        print("Please enter in digits.")
+        return
     date_added = str(date.today()) # adds the date when the entry was made
 
     expense_list.append({"Item": item, 
