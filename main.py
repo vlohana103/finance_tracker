@@ -71,9 +71,10 @@ while True:
             elif int(ask) == 3: # exit application
                 print("Thank you for using the expense tracker. GoodBye!")
                 break
+            else:
+                print("Please pick a valid option 1. or 2. or 3.\n")
         except ValueError:
-            #else:
-            print("Please pick a valid option 1. or 2. or 3.\n")
+            print("Please Enter a number.\n")
         
 
     # User has not entered a valid command
