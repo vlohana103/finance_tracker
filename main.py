@@ -1,4 +1,5 @@
 import json
+from database import create_table
 from datetime import date
 
 # Loads expense list
@@ -47,6 +48,7 @@ def view_expense():
         
 
 # =========== Start of core logic ============
+create_table()
 # making expense dictionary -> expense description : amount
 expense_list = load_from_file()
 
