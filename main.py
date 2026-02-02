@@ -1,5 +1,5 @@
 import json
-from database import create_table
+from database import create_table, insert_expenses
 from datetime import date
 
 # Loads expense list
@@ -26,13 +26,16 @@ def add_expense():
         return
     date_added = str(date.today()) # adds the date when the entry was made
 
-    expense_list.append({"Item": item, 
-                        "Amount" : num, 
-                        "Date added" : date_added}) # list of dicts
+
+    insert_expenses(date_added, num, item, "") # calls sql function in database.py
+
+    # expense_list.append({"Item": item, 
+    #                     "Amount" : num, 
+    #                     "Date added" : date_added}) # list of dicts
 
     # expense_list.update({item : num})
 
-    save_to_file()
+    # save_to_file()
 
 # views expenses
 def view_expense():
